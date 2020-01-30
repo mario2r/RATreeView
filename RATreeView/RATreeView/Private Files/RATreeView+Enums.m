@@ -102,8 +102,13 @@
       return RATreeViewStylePlain;
     case UITableViewStyleGrouped:
       return RATreeViewStyleGrouped;
+#ifdef __IPHONE_13_0
+    default:
+      return RATreeViewStylePlain;
+#endif
   }
 }
+
 #pragma mark Scroll Positions
 
 + (UITableViewScrollPosition)tableViewScrollPositionForTreeViewScrollPosition:(RATreeViewScrollPosition)scrollPosition
